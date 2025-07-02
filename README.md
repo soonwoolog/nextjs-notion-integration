@@ -10,7 +10,7 @@
 # Getting Started
 
 **1. Create a Notion Integration Key**
-<br>Go to <a href="https://developers.notion.com/">Notion Developers</a> and create a new integration and copy the generated Internal Integration Token.
+<br>Go to <a href="https://developers.notion.com/">Notion Developers</a>, create a new integration, and copy the generated Internal Integration Token.
 
 **2. Set up .env file**
 <br>Create a .env file in the root directory and add the following environment variables:
