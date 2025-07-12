@@ -6,26 +6,23 @@
 	<br>
 </div>
 
+# Usage
 
-# Getting Started
+## Create a Notion Integration Key
+Go to <a href="https://developers.notion.com/">Notion Developers</a>, create a new integration, and copy the generated Internal Integration Token.
 
-**1. Create a Notion Integration Key**
-<br>Go to <a href="https://developers.notion.com/">Notion Developers</a>, create a new integration, and copy the generated Internal Integration Token.
-
-**2. Set up .env file**
-<br>Create a .env file in the root directory and add the following environment variables:
+## Set up .env file
+Create a .env file in the root directory and add the following environment variables:
 
 ```
 NOTION_TOKEN=your_integration_key_here
 NOTION_PAGE_ID=your_notion_page_id_here
 ```
 
-**3. Run the project locally**
-<br>Install dependencies and start the development server:
+## Run the project
+Install dependencies and start the development server:
 
 ``` bash
 npm install
 npm run dev
 ```
-
-**4. Customize for your own use**
