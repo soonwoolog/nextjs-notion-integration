@@ -1,7 +1,7 @@
 <div align="center">
-  <h1>Next.js Notion Starter</h1>
+  <h1>Next.js Notion Intergration</h1>
   <p>
-		<b>A minimal example project that integrates Next.js with the <a href="https://github.com/makenotion/notion-sdk-js">Notion SDK</a></b>
+		<b>A tool that helps integrate Next.js with the <a href="https://github.com/makenotion/notion-sdk-js">Notion SDK</a></b>
 	</p>
 	<br>
 </div>
