@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@notionhq/client": "^4.0.0",
+    "@radix-ui/react-navigation-menu": "^1.2.13",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dotenv": "^17.0.1",
