@@ -1,7 +1,26 @@
 {
-  "name": "nextjs-notion-starter",
+  "name": "nextjs-notion-integration",
   "version": "0.1.0",
-  "private": true,
+  "description": "A tool that helps integrate Next.js with the Notion SDK",
+  "keywords": [
+    "nextjs",
+    "notion"
+  ],
+  "homepage": "https://github.com/soonwoolog/nextjs-notion-intergration",
+  "bugs": {
+    "url": "https://github.com/soonwoolog/nextjs-notion-intergration/issues",
+    "email": "tnsdn94560@gmail.com"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "soonwoolog",
+    "email": "tnsdn94560@gmail.com",
+    "url": "https://github.com/soonwoolog/nextjs-notion-intergration"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/soonwoolog/nextjs-notion-intergration.git"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -10,7 +29,6 @@
   },
   "dependencies": {
     "@notionhq/client": "^4.0.0",
-    "@radix-ui/react-navigation-menu": "^1.2.13",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dotenv": "^17.0.1",
