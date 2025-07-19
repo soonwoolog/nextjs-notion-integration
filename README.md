@@ -29,5 +29,5 @@ NOTION_TOKEN=your_integration_key_here
 NOTION_PAGE_ID=your_notion_page_id_here
 ```
 
-## How to make components?
+## How to make components
 Check out the ```examples``` folder in the project. You can use the components in the folder or customize them yourself.
