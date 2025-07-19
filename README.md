@@ -9,7 +9,7 @@
 
 ## Introduction
 Want to build your site using Notion?
-Here’s the thing: Notion content is all made up of <a href="https://developers.notion.com/docs/working-with-page-content">blocks</a>, so you need to render every single block type.
+Here’s the thing: Notion content is all made up of <a href="https://developers.notion.com/docs/working-with-page-content">blocks</a>, so you'll need to render every single block type.
 This tool helps you do exactly that!
 
 ## Project Setup
