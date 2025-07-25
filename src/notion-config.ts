@@ -6,6 +6,16 @@ export type NotionPageResponse = {
   date: string;
 };
 
+export type NotionBlock = {
+  type: string;
+  content: string;
+};
+
+export type NotionBlockResponse = {
+  title: string;
+  content: NotionBlock[];
+};
+
 export const dateFormatOption: Intl.DateTimeFormatOptions = {
   year: "numeric",
   month: "long",

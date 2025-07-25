@@ -1,6 +1,6 @@
 {
   "name": "nextjs-notion-integration",
-  "version": "0.1.7",
+  "version": "0.2.1",
   "description": "A tool that helps integrate Next.js with the Notion SDK",
   "keywords": [
     "nextjs",
@@ -17,20 +17,20 @@
     "url": "https://github.com/soonwoolog/nextjs-notion-intergration"
   },
   "files": [
-    "build/package.json",
-    "build/src"
+    "build"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/soonwoolog/nextjs-notion-intergration.git"
   },
-  "main": "build/src",
-  "types": "build/src/index.d.ts",
+  "main": "build",
+  "types": "build/index.d.ts",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepublish": "rm -rf build & tsc -p tsconfig.build.json"
   },
   "dependencies": {
     "@notionhq/client": "^4.0.0",

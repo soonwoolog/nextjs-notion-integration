@@ -1,9 +1,11 @@
-import NotionHeading from "./NotionHeading";
+import NotionHeading from "../blocks/NotionHeading";
+import type { NotionBlockResponse } from "notion-config";
 
-export function NotionPage({ data }: { data: any[] }) {
+export function NotionPage({ blocks }: { blocks: NotionBlockResponse }) {
   return (
     <>
-      {data.map((row, idx) => {
+      <div>{blocks.title}</div>
+      {blocks.content.map((row, idx) => {
         return (
           <div key={idx}>
             {(() => {

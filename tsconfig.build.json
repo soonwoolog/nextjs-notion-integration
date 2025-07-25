@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "target": "ES2019",
+    "moduleResolution": "node",
+    "outDir": "build",
+    "declaration": true,
+    "esModuleInterop": true,
+    "baseUrl": "src"
+  },
+  "include": ["src"],
+  "exclude": ["src/app", "src/components"]
+}
