@@ -1,11 +1,25 @@
-require("dotenv").config();
-
 import { Client, isFullPage, isFullBlock } from "@notionhq/client";
 import type { NotionPageResponse, NotionBlock, NotionBlockResponse } from "./notion-config";
 import { getContentByKey, dateTimeFormat } from "./notion-helpers";
 
-const notion = new Client({ auth: process.env.NOTION_API_KEY });
-const databaseId = process.env.NOTION_DATABASE_ID;
+let notion: Client | null = null;
+let databaseId: string | null = null;
+let initialized = false;
+
+function logAndThrow(message: string): never {
+  console.error(message);
+  throw new Error(message);
+}
+
+export function init(key: string, id: string) {
+  if (initialized) return;
+
+  if (!key || !id) logAndThrow("API Key or database ID is missing.");
+
+  notion = new Client({ auth: key });
+  databaseId = id;
+  initialized = true;
+}
 
 export async function getNotionPageList(): Promise<NotionPageResponse[]> {
   const query = await notion.databases.query({
@@ -36,39 +50,42 @@ export async function getNotionPageList(): Promise<NotionPageResponse[]> {
 }
 
 export async function getNotionPageBySlug(slug: string[]): Promise<NotionBlockResponse> {
-  if (!slug) return null;
+  try {
+    if (!notion || !databaseId) logAndThrow("Notion client or database ID is not initialized.");
 
-  const getNotionPageBySlug = await notion.databases.query({
-    database_id: databaseId as string,
-    filter: {
-      property: "slug",
-      rich_text: {
-        equals: slug.join("/")
+    const notionPageBySlug = await notion.databases.query({
+      database_id: databaseId as string,
+      filter: {
+        property: "slug",
+        rich_text: {
+          equals: slug.join("/")
+        }
       }
+    });
+
+    if (!notionPageBySlug.results.length) {
+      logAndThrow(`No page found for ${slug.join(" / ")}`);
     }
-  });
 
-  const getIdAndTitle = getNotionPageBySlug.results.filter(isFullPage).map(res => {
-    return {
-      id: res.id,
-      title: getContentByKey(res.properties, "title")
-    };
-  })[0];
+    const page = notionPageBySlug.results.filter(isFullPage).map(res => {
+      return {
+        id: res.id,
+        title: getContentByKey(res.properties, "title")
+      };
+    })[0];
 
-  const list = await notion.blocks.children.list({
-    block_id: getIdAndTitle.id
-  });
+    const children = await notion.blocks.children.list({
+      block_id: page.id
+    });
 
-  let blockList: NotionBlock[] = [];
-
-  list.results.filter(isFullBlock).forEach(p => {
-    blockList.push({
+    const blockList: NotionBlock[] = children.results.filter(isFullBlock).map(p => ({
       type: p.type,
       content: getContentByKey(p, p.type)
-    });
-  });
+    }));
 
-  const response: NotionBlockResponse = { title: getIdAndTitle.title, content: blockList };
-
-  return response;
+    return { title: page.title, content: blockList };
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
 }

@@ -9,6 +9,5 @@
     "esModuleInterop": true,
     "baseUrl": "src"
   },
-  "include": ["src"],
-  "exclude": ["src/app", "src/components"]
+  "include": ["src"]
 }
