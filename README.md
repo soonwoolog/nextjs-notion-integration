@@ -7,11 +7,6 @@
 	<br>
 </div>
 
-## Introduction
-Want to build your site using Notion?
-Here’s the thing: Notion content is all made up of <a href="https://developers.notion.com/docs/working-with-page-content">blocks</a>, so you'll need to render every single block type.
-This tool helps you do exactly that!
-
 ## Project Setup
 ### Installation
 ```
@@ -29,10 +24,5 @@ NOTION_TOKEN=your_integration_key_here
 NOTION_PAGE_ID=your_notion_page_id_here
 ```
 
-## Supproted Notion block types
-Check out the ```components``` folder in the project. You can use the components in the folder or customize them.
-| Name    | File Path                             | Description    |
-| ------- | ------------------------------------- | -------------- |
-| NotionPageList | components/page                | A list of page |
-| NotionPage     | components/page                | Single page    |
-| NotionHeading  | components/blocks              | Heading        |
+## Example
+<a>https://github.com/soonwoolog/soonwoolog.github.io</a>
