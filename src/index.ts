@@ -1,3 +1,3 @@
 export { init, getNotionPageList, getNotionPageBySlug } from "./notion-api";
-export type { NotionPageResponse, NotionBlockResponse } from "./notion-config";
-export { getContentByKey, formatBlockData } from "./notion-helpers";
+export type { NotionPageResponse, NotionText, NotionBlock, NotionBlockResponse } from "./notion-config";
+export { getTextByKey, getBlockByKey } from "./notion-helpers";

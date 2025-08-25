@@ -1,6 +1,6 @@
 {
   "name": "nextjs-notion-integration",
-  "version": "0.2.7",
+  "version": "0.3.1",
   "description": "A tool that helps integrate Next.js with the Notion SDK",
   "keywords": [
     "nextjs",

@@ -6,14 +6,19 @@ export type NotionPageResponse = {
   date: string;
 };
 
+export type NotionText = {
+  text: string;
+  annotations: any;
+};
+
 export type NotionBlock = {
-  type: string;
-  content: string;
+  blockType: string;
+  content: NotionText[];
 };
 
 export type NotionBlockResponse = {
   title: string;
-  content: NotionBlock[];
+  blocks: NotionBlock[];
 };
 
 export const dateFormatOption: Intl.DateTimeFormatOptions = {
